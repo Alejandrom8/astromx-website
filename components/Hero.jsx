@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Hero = () => {
+    
     const classes = useStyles(),
         theme = useTheme(),
         isSm = useMediaQuery(theme.breakpoints.down('sm'));
