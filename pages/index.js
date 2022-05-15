@@ -13,6 +13,7 @@ import React from "react";
 import ParticipantsCarrousel from "../components/MembersSlider";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
+import ReactPlayer from 'react-player';
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -52,8 +53,8 @@ export default function Home() {
     <Head>
       <title>Cosmoblastos </title>
     </Head>
-    <Menu />
     <Hero />
+    <Projects />
     <Box className={clsx(classes.section, classes.presentation)}>
       <Box pt={4} />
       <Container>
@@ -61,52 +62,49 @@ export default function Home() {
           <Grid container item xs={12} md={12} spacing={1}>
             <Grid item xs={12}>
               <Typography variant={'h5'} className={classes.title}>
-                ¿Quiénes somos?
+                Demostración
               </Typography>
               <Box pb={2} />
             </Grid>
-            <Grid item xs={12} md={10}>
-              <Typography variant={'body1'} className={classes.paragraph}>
-                Somos la división de Medicina Aeroespacial de la AAFI, un grupo multidisciplinario de estudiantes de diferentes áreas del conocimiento que centra su pasión y talento en las ciencias de la salud, la ingeniería y el espacio para desarrollar tecnología centrada en la Medicina Aeroespacial.
-              </Typography>
-            </Grid>
           </Grid>
           <Grid item xs={12}>
-            <ParticipantsCarrousel />
+            <Typography variant={'h6'}>
+              Escenario: emergencia
+            </Typography>
+            <ReactPlayer
+                  playing={false}
+                  width={'100%'}
+                  height={'500px'}
+                  url={'/RCP.mp4'}
+                  controls={true}
+              />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant={'h6'}>
+              Escenario: COVID
+            </Typography>
+            <ReactPlayer
+                  playing={false}
+                  width={'100%'}
+                  height={'500px'}
+                  url={'/covid.mp4'}
+                  controls={true}
+              />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant={'h6'}>
+              Escenario: ejercicio
+            </Typography>
+            <ReactPlayer
+                  playing={false}
+                  width={'100%'}
+                  height={'500px'}
+                  url={'/ejercicio.mp4'}
+                  controls={true}
+              />
           </Grid>
         </Grid>
       </Container>
     </Box>
-    <Box className={clsx(classes.section, classes.whatWeDo)}>
-      <Box pt={4} />
-      <Container>
-        <Grid container spacing={5} justifyContent={'flex-end'}>
-          <Grid item xs={12} md={6}>
-            <img src={'/members.jpeg'} width={'100%'} />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Typography variant={'h5'} className={classes.title}>
-              ¿Qué hacemos?
-            </Typography>
-            <Box pb={4} />
-            <Typography variant={'body1'} className={classes.paragraph}>
-              Nos centramos principalmente en el desarrollo de tecnología que apoya en la solución a las principales problemáticas de salud que los astronautas llegan a presentar en su estancia en la Estación Espacial Internacional.
-              También nos dedicamos a la creación y difusión de temas en Medicina Aeroespacial para dar a conocer en la sociedad más sobre ella, para ello participamos en talleres, conferencias, eventos públicos y publicaciones en redes sociales.
-            </Typography>
-            <Box width={'100%'} display={'flex'} alignItems={'center'} justifyContent={'center'} pt={4}>
-              <Box pr={2}>
-                <Button variant={'contained'} color={'primary'}>
-                  Ver proyectos
-                </Button>
-              </Box>
-              <Button variant={'outlined'} color={'primary'}>
-                Ver artículos
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
-    <Projects />
   </Box>
 }

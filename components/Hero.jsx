@@ -63,13 +63,6 @@ const Hero = () => {
                     Creando el futuro de la medicina aeroespacial
                 </Typography>
                 <Box pb={3} />
-                {
-                    isSm
-                        ? <Box display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                            {seeOwrProjectsButton}
-                          </Box>
-                        : seeOwrProjectsButton
-                }
             </Box>
         </Box>
     </Box>
